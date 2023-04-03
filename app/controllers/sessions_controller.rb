@@ -19,6 +19,8 @@ include CurrentUserConcern
     end
 
     def logout
+        reset_session
+        reder json: {status: 200, logged_out: true}
     end
 
     def logged_in
